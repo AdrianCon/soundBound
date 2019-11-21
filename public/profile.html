@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>SoundBound</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark navbar-custom" style="background-color: #847e89;color: #847e89;">
+        <div class="container"><a class="navbar-brand" href="index.html">Soundbound</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navbarResponsive"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <form class="form-inline mr-auto">
+                    <div class="md-form my-0">
+                        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                    </div>
+                </form>
+                <ul class="nav navbar-nav ml-auto navRigth">
+                    <li class="nav-item navCont" role="presentation"><a class="nav-link" href="#">Sign Up</a></li>
+                    <li class="nav-item navCont" role="presentation"><a class="nav-link" href="#">Log In</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+	<div class="container profileMain">
+	    <div class="row profile">
+			<div class="col-md-3 col-xs-12 mainUserDiv">
+				<div class="profile-sidebar">
+
+					<div class="profile-userpic">
+						<img src="" class="img-responsive" alt="img.jpeg" id="profilePic">
+					</div>
+
+					<div class="profile-usertitle">
+						<div class="profile-usertitle-name" id="username">
+							
+						</div>
+						<div class="profile-usertitle-job" id="bio">
+							
+						</div>
+					</div>
+
+					<div class="profile-userbuttons">
+						<button type="button" class="btn btn-success btn-sm">Follow</button>
+					</div>
+
+
+					<a href="#">
+					<i class="glyphicon glyphicon-user"></i>
+					Account Settings </a>
+				</div>
+
+				<section id="newPost">
+			        <h1 class="masthead-heading mb-0">New Post</h1>
+			        <form class="newPostForm">
+			            <div class="form-group">
+			                <label>Song Title</label>
+			                <input type="text" class="form-control" id="songTitle" placeholder="Title of song" required>
+			            </div>
+
+			            <div class="form-group">
+			                <label>Band</label>
+			                <input type="text" class="form-control" id="bandName" placeholder="Band or artist name" required>
+			            </div>
+
+			            <div class="form-group">
+			                <label>Album</label>
+			                <input type="text" class="form-control" id="albumName" placeholder="Album" required>
+			            </div>
+
+			            <div class="form-group">
+			                <label>Tuning</label>
+			                <input type="text" class="form-control" id="tuningUsed" placeholder="Tuning used in song" required> 
+			            </div>
+
+			            <div class="form-group">
+			                <label>Image</label>
+			                <input type="text" class="form-control" id="imageUrl" placeholder="URL of band or album">
+			            </div>
+
+			            <div class="form-group form-check">
+			                <input type="checkbox" class="form-check-input" id="privateCheck" required>
+			                <label class="form-check-label">Private</label>
+			            </div>
+
+			            <button type="submit" class="btn btn-primary submitPost">Submit</button>
+			        </form>
+			    </section>
+
+			    <section id="favs">
+			    		<h2 class="display-6">Favs</h2>
+			    	</section>
+
+			</div>
+			<div class="col-md-9">
+	            <div class="profile-content" id="userPosts">
+
+	            </div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/profile.js"></script>
+<script type="text/javascript" src="assets/js/checkLogin.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</html>

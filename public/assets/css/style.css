@@ -1,0 +1,126 @@
+.btn.btn-primary.btn-xl.rounded-pill.mt-5 {
+	background-color: #211a1e;
+}
+
+.rounded-circle.img-fluid {
+}
+
+.card-title {
+	align-content: space-around;
+}
+
+.col {
+	align-content: space-around;
+}
+
+.btn.btn-primary {
+	background-color: #211a1e;
+	color: #7ebdc2;
+}
+
+.tuneBtn {
+	margin-top: 20px;
+	font-size: 100px;
+	margin-left: auto;
+}
+
+.card-body {
+	background-color: #847e89;
+}
+
+a.btn:hover{
+	background-color: #211a1e;
+}
+
+.chTuning{
+	margin-left: auto;
+	margin-top: 60px;
+}
+
+.modal {
+	display: block; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	padding-top: 60px;
+	text-align: center;
+	color: #ee0b75;
+	max-width: 3200px;
+	padding-top: 10rem;
+}
+
+.loginForm{
+	margin: auto;
+  	width: 90%; /* Could be more or less, depending on screen size */
+}
+
+.inputLogin {
+	width: 60%;
+	padding: 12px 20px;
+	margin: auto;
+	display: inline-block;
+	border: 1px solid #ee0b75;
+	box-sizing: border-box;
+	background-color:  #343a40;
+	color: #ee0b75;
+}
+
+.btnLogin{
+	width: 50%;
+	margin: 10px auto 10px auto;
+	background-color: #211a1e;
+	color: #ee0b75;
+}
+
+.login-form{
+	padding-top: 10rem;
+}
+
+.profileMain{
+	padding-top: 10rem;
+}
+
+#notes{
+	text-align: center;
+}
+
+
+.mainUserDiv{
+	text-align: center;
+}
+
+
+#newPost{
+	margin-top: 3rem;
+	margin-bottom: 3rem; 
+	text-align: center;
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+	color: white;
+	background-color: #000000;
+}
+
+.newPostForm{
+	width: 70%;
+	margin: auto;
+}
+
+.rounded-circle{
+	width: 300px;
+	height: 300px;
+	text-align: center;
+}
+
+.img-fluid{
+	max-width: ;
+}
+
+#favs{
+	border: solid 2px;
+}

@@ -3,6 +3,8 @@ $(document).ready(function (){
 	//User info
 	if(localStorage.getItem("user") != null){
 		var token = JSON.parse(localStorage.getItem("user"));
+	}else{
+		window.location.href =  "index.html"; 
 	}
 	console.log(token);
 
@@ -122,5 +124,67 @@ $(document).ready(function (){
 		error: function(err){
 					console.log(err);
 				}
+	});
+
+	//New Post
+	$(".submitPost").on("click", function(event){
+		event.preventDefault();
+
+		var newPost = {
+			article: {
+				title: $("#songTitle").val(),
+				description: $("#bandName").val(),
+				album: $("#albumName").val(),
+				body: $("#tuningUsed").val(),
+				image: $("#imageUrl").val() ? $("#imageUrl").val() : "assets/img/03.jpg",
+				private: $("#privateCheck").is("checked") ? true : false,
+				id: token.user.id
+			},
+			id: token.user.token
+		}
+
+		//Post from profile
+		$.ajax({
+		url: "/api/articles",
+		headers: {
+			"Authorization" : "Token " + token.user.token
+		},
+		data: JSON.stringify(newPost),
+		method: 'POST',
+		dataType: 'json',
+		contentType: 'application/json', 
+		success: function(post){
+			$("#userPosts").append(`
+				<section id=""${post.article.id}">
+			        <div class="container">
+			            <div class="row align-items-center">
+			                <div class="col-lg-6 order-lg-2">
+			                    <div class="p-5"><img class="rounded-circle img-fluid" src="${post.article.image}"></div>
+			                </div>
+			                <div class="col-lg-6 order-lg-1">
+			                    <div class="p-5">
+			                    	<h1 class="display-4">${post.article.title}
+			                        <h2 class="display-6">${post.article.description}</h2>
+			                        <h2 class="display-8">${post.article.album}</h2>
+			                        <p>Favorites: ${post.article.favoritesCount}</p><p>By: ${post.username}</p>
+			                        <p>${post.article.body}</p>
+			                    </div>
+			                </div>
+			            </div>
+			        </div>
+			    </section>
+			`);
+
+			$("#songTitle").val("");
+			$("#bandName").val("");
+			$("#albumName").val("");
+			$("#tuningUsed").val("");
+			$("#imageUrl").val("");
+		},
+		error: function(error){
+			console.log(error);
+			alert("Error while posting");
+		}
+		});
 	});
 });

@@ -88,7 +88,7 @@ $(document).ready(function (){
 									                        <h2 class="display-6">${post.description}</h2>
 									                        <p>Likes: ${post.favoritesCount}</p><p>By: ${post.author.username}</p>
 									                        <p>${post.body}</p>
-									                        <button type="button" class="btn btn-warning btn-sm" id="${post.id}">Delete</button>
+									                        <button type="submit" class="btn btn-warning btn-sm delBtn" id="${post.id}">Delete</button>
 									                    </div>
 									                </div>
 									            </div>
@@ -111,6 +111,7 @@ $(document).ready(function (){
 							                        <h2 class="display-6">${post.description}</h2>
 							                        <p>Likes: ${post.favoritesCount}</p><p>By: ${post.author.username}</p>
 							                        <p>${post.body}</p>
+							                        <button type="submit" class="btn btn-warning btn-sm delBtn" id="${post.id}">Delete</button>
 							                    </div>
 							                </div>
 							            </div>
@@ -169,7 +170,7 @@ $(document).ready(function (){
 			                        <p>Favorites: ${post.article.favoritesCount}</p><p>By: ${post.username}</p>
 			                        <p>${post.article.body}</p>
 			                    </div>
-			                </div>
+			                </div>5ddd658e4af9b201c9caf7aa
 			            </div>
 			        </div>
 			    </section>
@@ -188,3 +189,27 @@ $(document).ready(function (){
 		});
 	});
 });
+
+$(document).on("click",".delBtn", function(event){
+		console.log(event);
+		event.preventDefault();
+
+		var postId = {
+			id : this.id
+		};
+
+		//Delete Post
+		$.ajax({
+			url: "api/articles/delete",
+			method : "DELETE",
+			data : JSON.stringify(postId),
+			dataType : "json",
+			contentType : "application/json",
+			success : function(post){
+				alert("Post deleted");
+			},
+			error: function(error){
+				console.log(error);
+			}
+		});
+	});

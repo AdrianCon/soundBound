@@ -84,10 +84,22 @@ router.put('/:article', auth.required, function(req, res, next) {
 });
 
 //Delete article
-router.delete('/:article', auth.required, function(req, res, next) {
-  User.findById(req.payload.id).then(function(){
-    if(req.article.author._id.toString() === req.payload.id.toString()){
-      return req.article.remove().then(function(){
+// router.delete('/delete', auth.required, function(req, res, next) {
+//   User.findById(req.payload.id).then(function(){
+//     if(req.article.author._id.toString() === req.payload.id.toString()){
+//       return req.article.remove().then(function(){
+//         return res.sendStatus(204);
+//       });
+//     } else {
+//       return res.sendStatus(403);
+//     }
+//   });
+// });
+
+router.delete('/delete', function(req, res, next) {
+  Article.findById(req.body.id).then(function(art){
+    if(art){
+      return art.remove().then(function(){
         return res.sendStatus(204);
       });
     } else {
@@ -95,6 +107,21 @@ router.delete('/:article', auth.required, function(req, res, next) {
     }
   });
 });
+
+//Delete article
+// router.delete('/:id', auth.required, function(req, res, next) {
+//   console.log("inside");
+//   var id = req.payload.id;
+//   Article.findOne({_id : id}).then(function(delArticle){
+//     if(delArticle){
+//       return delArticle.remove().then(function(){
+//         return res.sendStatus(204);
+//       });
+//     } else {
+//       return res.sendStatus(403);
+//     }
+//   });
+// }); 
 
 // Favorite an article
 router.post('/:article/favorite', auth.required, function(req, res, next) {

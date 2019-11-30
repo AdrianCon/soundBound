@@ -99,7 +99,7 @@ $(document).ready(function (){
 						}
 						else{
 							$("#userPosts").append(`
-								<section id=""${post.id}">
+								<section id="${post.id}">
 							        <div class="container">
 							            <div class="row align-items-center">
 							                <div class="col-lg-6 order-lg-2" style="margin-top: 3rem;">
@@ -206,7 +206,7 @@ $(document).on("click",".delBtn", function(event){
 			dataType : "json",
 			contentType : "application/json",
 			success : function(post){
-				alert("Post deleted");
+				$("#" + postId.id).remove();
 			},
 			error: function(error){
 				console.log(error);

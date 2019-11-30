@@ -34,8 +34,6 @@
                 <h2 class="masthead-subheading mb-0" style="text-align: center;">90 BPM</h2>
                 <a class="btn btn-primary btn-xl rounded-pill mt-5 playMetro" role="button" href="#"><i class="fa fa-plus"></i></a>
                 <a class="btn btn-primary btn-xl rounded-pill mt-5" role="button" href="#"><i class="fa fa-minus"></i></a></div>
-                <button class="tone-play-toggle" type="button">Play Audio</button>
-                <button class="tone-play-timeout" type="button">Stop Audio</button>
         </div>
         <div class="bg-circle-1 bg-circle"></div>
         <div class="bg-circle-2 bg-circle"></div>
@@ -46,20 +44,23 @@
         <h1 class="masthead-heading mb-0">Tuner</h1>
         <div class="container">
             <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle chTuning" data-toggle="dropdown" aria-expanded="false" type="button">Tunings </button>
-                <div class="dropdown-menu" role="menu">
-                    <a class="dropdown-item" role="presentation" href="#">Standard</a>
-                    <a class="dropdown-item" role="presentation" href="#">Drop D</a>
-                    <a class="dropdown-item" role="presentation" href="#">Drop C</a>
-                </div>
+                <select id="dropMenu">
+                    <option value="standard">Standard</option>
+                    <option value="dropd">Drop D</option>
+                    <option value="dropc">Drop C</option>
+                    <option value="openg">Open G</option>
+                    <option value="opend">Open D</option>
+                    <option value="opene">Open E</option>
+                    <option value="opena">Open A</option>
+                </select>
             </div>
             <div class="row align-items-center">
-                <button class="btn btn-primary col-xs-2 tuneBtn btn-primary-spacing mr-1 tone-play-toggle" type="button" value="E">E</button>
-                <button class="btn btn-primary col-xs-2 tuneBtn btn-primary-spacing mr-1 tone-play-toggle" type="button" value="A">A</button>
-                <button class="btn btn-primary col-xs-2 tuneBtn btn-primary-spacing mr-1 tone-play-toggle" type="button" value="D">D</button>
-                <button class="btn btn-primary col-xs-2 tuneBtn btn-primary-spacing mr-1 tone-play-toggle" type="button" value="G">G</button>
-                <button class="btn btn-primary col-xs-2 tuneBtn btn-primary-spacing mr-1 tone-play-toggle" type="button" value="B">B</button>
-                <button class="btn btn-primary col-xs-2 tuneBtn btn-primary-spacing mr-1 tone-play-toggle" type="button" value="E">E</button>
+                <button class="btn btn-primary col-xs-2 tuneBtn btn-primary-spacing mr-1 tone-play-toggle" type="button" id="bt1" value="E4">E</button>
+                <button class="btn btn-primary col-xs-2 tuneBtn btn-primary-spacing mr-1 tone-play-toggle" type="button" id="bt2" value="A4">A</button>
+                <button class="btn btn-primary col-xs-2 tuneBtn btn-primary-spacing mr-1 tone-play-toggle" type="button" id="bt3" value="D5">D</button>
+                <button class="btn btn-primary col-xs-2 tuneBtn btn-primary-spacing mr-1 tone-play-toggle" type="button" id="bt4" value="G5">G</button>
+                <button class="btn btn-primary col-xs-2 tuneBtn btn-primary-spacing mr-1 tone-play-toggle" type="button" id="bt5" value="B5">B</button>
+                <button class="btn btn-primary col-xs-2 tuneBtn btn-primary-spacing mr-1 tone-play-toggle" type="button" id="bt6" value="E6">E</button>
             </div>
         </div>
     </section>
@@ -145,7 +146,7 @@ $(".tone-play-timeout").on("click",function(event){
 
 function playSound(key){
     var synth = new Tone.Synth().toMaster();
-    synth.triggerAttackRelease(key + '4', '2');
+    synth.triggerAttackRelease(key, '2');
 }
 </script>
 </html>

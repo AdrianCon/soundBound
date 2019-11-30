@@ -173,5 +173,142 @@ $(document).ready(function (){
 
 
 	//sequencer();
+	$('#dropMenu').change(function(){
+		var tuning = $("#dropMenu option:selected").val();
+
+		if(tuning == 'dropd'){
+			$('#bt1').attr('value','D4');
+			$('#bt1').text('D');
+
+			$('#bt2').attr('value','A4');
+			$('#bt2').text('A');
+
+			$('#bt3').attr('value','D5');
+			$('#bt3').text('D');
+
+			$('#bt4').attr('value','G5');
+			$('#bt4').text('G');
+
+			$('#bt5').attr('value','B5');
+			$('#bt5').text('B');
+
+			$('#bt6').attr('value','E6');
+			$('#bt6').text('E');
+		}
+		else if(tuning == 'dropc'){
+			$('#bt1').attr('value','C4');
+			$('#bt1').text('C');
+			$('#bt2').attr('value','A4');
+			$('#bt2').text('A');
+
+			$('#bt3').attr('value','D5');
+			$('#bt3').text('D');
+
+			$('#bt4').attr('value','G5');
+			$('#bt4').text('G');
+
+			$('#bt5').attr('value','B5');
+			$('#bt5').text('B');
+
+			$('#bt6').attr('value','E6');
+			$('#bt6').text('E');
+		}
+		else if(tuning == 'openg'){
+			$('#bt1').attr('value','D4');
+			$('#bt1').text('D');
+
+			$('#bt2').attr('value','G4');
+			$('#bt2').text('G');
+
+			$('#bt3').attr('value','D5');
+			$('#bt3').text('D');
+
+			$('#bt4').attr('value','G5');
+			$('#bt4').text('G');
+
+			$('#bt5').attr('value','B5');
+			$('#bt5').text('B');
+
+			$('#bt6').attr('value','D6');
+			$('#bt6').text('D');
+		}
+		else if(tuning == 'opend'){
+			$('#bt1').attr('value','D4');
+			$('#bt1').text('D');
+
+			$('#bt2').attr('value','A4');
+			$('#bt2').text('A');
+
+			$('#bt3').attr('value','D5');
+			$('#bt3').text('D');
+
+			$('#bt4').attr('value','F#5');
+			$('#bt4').text('F#');
+
+			$('#bt5').attr('value','A5');
+			$('#bt5').text('A');
+
+			$('#bt6').attr('value','D6');
+			$('#bt6').text('D');
+		}
+		else if(tuning == 'opene'){
+			$('#bt1').attr('value','E4');
+			$('#bt1').text('E');
+
+			$('#bt2').attr('value','B4');
+			$('#bt2').text('B');
+
+			$('#bt3').attr('value','E5');
+			$('#bt3').text('E');
+
+			$('#bt4').attr('value','G#5');
+			$('#bt4').text('G#');
+
+			$('#bt5').attr('value','B5');
+			$('#bt5').text('B');
+
+			$('#bt6').attr('value','E6');
+			$('#bt6').text('E');
+		}
+		else if(tuning == 'opena'){
+			$('#bt1').attr('value','E4');
+			$('#bt1').text('E');
+
+			$('#bt2').attr('value','A4');
+			$('#bt2').text('A');
+
+			$('#bt3').attr('value','E5');
+			$('#bt3').text('E');
+
+			$('#bt4').attr('value','A5');
+			$('#bt4').text('A');
+
+			$('#bt5').attr('value','C#5');
+			$('#bt5').text('C#');
+
+			$('#bt6').attr('value','E6');
+			$('#bt6').text('E');
+		}
+		else{
+			$('#bt1').attr('value','E4');
+			$('#bt1').text('E');
+
+			$('#bt2').attr('value','A4');
+			$('#bt2').text('A');
+
+			$('#bt3').attr('value','D5');
+			$('#bt3').text('D');
+
+			$('#bt4').attr('value','G5');
+			$('#bt4').text('G');
+
+			$('#bt5').attr('value','B5');
+			$('#bt5').text('B');
+
+			$('#bt6').attr('value','E6');
+			$('#bt6').text('E');
+		}
+	})
+
 
 });
